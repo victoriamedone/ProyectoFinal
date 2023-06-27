@@ -14,12 +14,6 @@ public abstract class ImpAutorServicio implements AutorServicio {
     @Autowired
     AutorRepositorio autorRepositorio;
 
-
-    @Override
-    public List<Autor> listarTodosLosAutores() {
-        return null;
-    }
-
     @Override
     public <List> Autor listarAutores() {
         return (Autor) autorRepositorio.findAll();
