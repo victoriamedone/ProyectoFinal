@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface LibroServicio {
 
-    public List<Libro> listarTodosLosLibros();
+    public  List<Libro> listarTodosLosLibros();
 
     public Libro guardarLibro(Libro libro);
 
