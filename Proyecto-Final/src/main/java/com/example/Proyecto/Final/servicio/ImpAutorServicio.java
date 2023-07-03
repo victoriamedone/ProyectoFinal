@@ -4,19 +4,18 @@ import com.example.Proyecto.Final.repositorio.AutorRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
 import java.util.List;
 
 @Service
-public abstract class ImpAutorServicio implements AutorServicio {
+public class ImpAutorServicio implements AutorServicio {
 
     @Autowired
     AutorRepositorio autorRepositorio;
 
+
     @Override
-    public <List> Autor listarAutores() {
-        return (Autor) autorRepositorio.findAll();
+    public List<Autor> listarTodosLosAutores(){
+        return autorRepositorio.findAll();
     }
 
     @Override
@@ -25,17 +24,17 @@ public abstract class ImpAutorServicio implements AutorServicio {
     }
 
     @Override
-    public Autor modificarAutor(Autor autor) {
+    public Autor obtenerAutorPorId(Long id) {
+        return autorRepositorio.findById(Math.toIntExact(id)).get();
+    }
+
+    @Override
+    public Autor actualizarAutor(Autor autor) {
         return autorRepositorio.save(autor);
     }
 
     @Override
     public void eliminarAutor(Autor autor) {
         autorRepositorio.delete(autor);
-    }
-
-    @Override
-    public Autor obtenerAutorPorID(Integer Id) {
-        return autorRepositorio.findById(Id).get();
     }
 }

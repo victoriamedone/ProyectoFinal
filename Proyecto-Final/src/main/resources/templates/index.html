@@ -12,7 +12,7 @@
 <body>
 
   <div class="container - mt4">
-     <a th:href="@{/naew} " class="btn btn-outline-dark" > Nuevo </a>
+     <a th:href="@{/new} " class="btn btn-outline-dark" > Nuevo </a>
 
       <br>
       <br>
@@ -34,7 +34,7 @@
                 <td th:text="${Autores.apellido}"> APELLIDO </td>
 
                <td>
-                   <a class="btn btn-outline-info"> EDITAR </a>
+                   <a th:href=@"{"/autores"}+${autor.id}" class="btn btn-outline-info"> EDITAR </a>
                    <a class="btn btn-danger"> ELIMINAR </a>
                </td>
 

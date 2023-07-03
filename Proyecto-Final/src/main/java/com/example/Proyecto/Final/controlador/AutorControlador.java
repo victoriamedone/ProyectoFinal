@@ -21,7 +21,7 @@ public class AutorControlador {
 
     @GetMapping("/autores")
     public String listarAutores(Model modelo){
-        modelo.addAttribute("autores", autorServicio.listarAutores());
+        modelo.addAttribute("autores", autorServicio.guardarAutor(new Autor()));
         return "autores";
     }
 
